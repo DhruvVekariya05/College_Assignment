@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <ctype.h>
+int isVowel(char *ch) {
+    char newCh = tolower(*ch);
+    return newCh == 'a' || newCh == 'e' || newCh == 'i' || newCh == 'o' || newCh == 'u';
+}
+int isDigit(char *ch) {
+    return isdigit(*ch);
+}
+int main() {
+    char ch;
+    printf("Enter Character: ");
+    scanf("%c", &ch);
+    char *ptrCh = &ch;
+    if (isVowel(ptrCh)) {
+        printf("Character is Vowel");
+    } else if (isDigit(ptrCh)) {
+        printf("Character is Digit");
+    } else {
+        printf("Character is Consonant");
+    }
+    return 0;
+}
